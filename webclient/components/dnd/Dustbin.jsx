@@ -41,33 +41,25 @@ const propTypes = {
   canDrop: PropTypes.bool.isRequired,
 };
 
-changeCard()
-{
-  this.props.changeCard(cards);
-}
 
 class Dustbin extends Component {
 
+  changeCard(cards)
+  {
+    this.props.changeCard(cards);
+  }
+
   render() {
-    console.log("dustbin...",this.props.allCards);
+    // console.log("dustbin...",this.props.allCards);
     const { canDrop, isOver, connectDropTarget } = this.props;
     const isActive = canDrop && isOver;
 
     return connectDropTarget(
-      // <div>
-      // <ReactReorderable>
       <div style={{ ...style}}>
         {isActive ?
           'Release to drop' :
           'Drag a box here'}
           <Reorder allCards={this.props.allCards} changeCard={this.changeCard.bind(this)}/>
-
-          {/* // {this.props.allCards.length > 0?
-          //   this.props.allCards.map((item, index) => (<Card name={item.name}/>))
-          //           : null} */}
-        {/* <List allCards={this.props.allCards}/> */}
-      {/* </div>
-    </ReactReorderable> */}
   </div>,
     );
   }

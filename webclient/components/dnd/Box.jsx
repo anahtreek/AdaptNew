@@ -27,11 +27,13 @@ const boxSource = {
     const dropResult = monitor.getDropResult();
 
     if (dropResult) {
-      console.log(item.id+"...."+item.name);
+      // console.log(item.id+"...."+item.name);
       // window.alert( // eslint-disable-line no-alert
       //   `You dropped ${item.name} into ${dropResult.name}!`,
       // );
+
       props.addCard(item.id,item.name);
+
 //       this.setState({
 //         status:stat
 //       })
@@ -55,13 +57,6 @@ const propTypes = {
 };
 
 class Box extends Component {
-  constructor(){
-    super();
-    this.state = {
-      status:''
-    };
-  }
-
 
   render() {
     const { isDragging, connectDragSource } = this.props;
