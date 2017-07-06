@@ -1,0 +1,39 @@
+body {
+  background: url('../img/model.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+}
+.formwidth {
+  width:80% !important;
+}
+.formAlign {
+  margin-left: 64%;
+  margin-top: 15%;
+  background: white;
+  width: 24%;
+  border-radius: 4%;
+  position: fixed;
+}
+.btnColor {
+  border: none !important;
+  background-color: rgb(38, 114, 236) !important;
+  min-width: 80px !important;
+  width: auto !important;
+  height: 30px !important;
+  padding: 4px 20px 6px 20px !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  color: rgb(255, 255, 255) !important;
+  cursor: pointer !important;
+  margin-bottom: 8px !important;
+}
+.loginTitle{
+  color: black;
+  font-family: calibri
+}
+.alert-danger{
+  margin-bottom: 0px;
+}

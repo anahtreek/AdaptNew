@@ -1,0 +1,115 @@
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-right: -15px;
+    margin-left: -15px;
+    background: white;
+}
+.logo{
+  height:60px;
+  padding-left: 10px;
+}
+
+#spacingCorner{
+  margin-right: 10px;
+}
+#spacing{
+  margin-top:  10px;
+}
+#textStyle{
+  font-size: 25px;
+  margin-left: 20px;
+color: green;
+  font-family: 'Bree Serif', serif;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+#dropdownPosition{
+  text-align: center;
+}
+#homePagetitle{
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 0 30px #000;
+  margin: 10px auto 10px auto;
+  text-align: center;
+}
+@media only screen and (min-width: 771px) {
+#homePageDomain {
+margin-left: 100px !important;
+margin-bottom: 10px !important;
+}
+}
+@media only screen and (max-width: 770px) {
+#homePageDomain {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+    margin-bottom: 10px !important;
+}
+}
+
+@media only screen and (min-width: 771px) {
+#mobileView {
+display:none;
+}
+}
+@media only screen and (max-width: 770px) {
+#mobileView {
+display:block;
+}
+}
+@media only screen and (min-width: 771px) {
+#desktopView {
+display:block;
+}
+}
+@media only screen and (max-width: 770px) {
+#desktopView {
+display:none;
+}
+}
+.navbar{
+min-height: 40px;
+margin-bottom: 0px;
+}
+#footerTextAllignment{
+text-align: center;
+}
+#footer {
+position: fixed;
+height: 20px;
+bottom: 0;
+width: 100%;
+background-color: grey;
+}
+.search{
+margin-left: 30px!important;
+}
+.topbar{
+margin-top: 50px;
+}
+@media only screen and (min-width: 651px) {
+#homePageDomainButton {
+margin-left: 30px !important;
+margin-bottom: 10px !important;
+}
+}
+@media only screen and (max-width: 650px) {
+#homePageDomainButton {
+margin-left: 80px !important;
+margin-bottom: 10px !important;
+}
+}
+@media only screen and (min-width: 651px) {
+#tablePosition {
+  width:60%;
+  margin-left:25%;
+  margin-right:15%;
+}
+}
+@media only screen and (max-width: 650px) {
+#tablePosition {
+width:70%;
+margin-left:15%;
+margin-right:15%;
+}
+}
