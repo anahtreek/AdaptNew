@@ -6,7 +6,7 @@ class MyCard extends React.Component {
       const { name } = this.props;
 return (
   <div style={{padding:'10px'}}>
-    <Card>
+    <Card style={{margin:'auto'}}>
       <Card.Content>
         { name }
       </Card.Content>

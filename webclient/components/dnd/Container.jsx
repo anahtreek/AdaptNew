@@ -4,6 +4,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import Dustbin from './Dustbin';
 import Box from './Box';
 import {Grid} from 'semantic-ui-react';
+import {Scrollbars} from 'react-custom-scrollbars';
 
 export default class Container extends Component {
   constructor() {
@@ -15,7 +16,6 @@ export default class Container extends Component {
     }
 
 addCard(id, name) {
-  // console.log(id + " " + name );
   var cardArray = this.state.allCards;
   cardArray.push({id:id,name:name});
   this.setState({
@@ -26,11 +26,10 @@ addCard(id, name) {
     stat += item.id;
   })
   this.setState({status:stat})
-  console.log('add'+this.state.status);
+  console.log('status'+this.state.status);
 }
 
 changeCard(cards){
-  // console.log("in changecard");
   this.setState({
     allCards: cards
   });
@@ -39,7 +38,7 @@ changeCard(cards){
     stat += item.id;
   })
   this.setState({status:stat})
-  console.log('change'+this.state.status);
+  console.log('status'+this.state.status);
 }
 
   render() {
@@ -47,25 +46,24 @@ changeCard(cards){
 
     return (
       <DragDropContextProvider backend={HTML5Backend}>
-        <div style={{height:'1000px'}}>
-          <Grid celled>
+        <div>
+          <Grid celled style={{height:'60%'}}>
             <Grid.Column width={4}>
-              <div style={{
-                overflow: 'hidden',
-
-                clear: 'both'
-              }}>
+              <div>
                 <Box id={1} name="Glass" addCard={this.addCard.bind(this)}/>
                 <Box id={2} name="Banana" addCard={this.addCard.bind(this)}/>
                 <Box id={3} name="Paper" addCard={this.addCard.bind(this)}/>
               </div>
             </Grid.Column>
             <Grid.Column width={11}>
-              <div style={{
-                overflow: 'hidden',
-                clear: 'both'
-              }}>
-                <Dustbin allCards={this.state.allCards} changeCard={this.changeCard.bind(this)}/>
+              <div>
+                <Scrollbars renderTrackHorizontal={props => <div {...props} className="track-horizontal"
+                style={{
+                  display: 'none',
+                  position: 'right'
+              }}/>} autoHeight autoHeightMin={400}>
+                <Dustbin allCards={this.state.allCards} changeCard={this.changeCard.bind(this)} style={{height:'500px'}}/>
+              </Scrollbars>
               </div>
             </Grid.Column>
           </Grid>

@@ -5,11 +5,10 @@ import ItemTypes from './ItemTypes';
 import List from './List.jsx';
 import Card from './card';
 import Reorder from './reorder.jsx';
-// import ReactReorderable from 'react-reorderable';
 
 const style = {
-  height: '1000px',
-  width: '1000px',
+  height: '500px',
+  width: '100%',
   marginRight: '1.5rem',
   marginBottom: '1.5rem',
   color: 'black',
@@ -18,7 +17,7 @@ const style = {
   fontSize: '1rem',
   lineHeight: 'normal',
   float: 'left',
-  // border: '1px dashed black',
+  backgroundColor:'lightblue'
 };
 
 const boxTarget = {
@@ -50,7 +49,6 @@ class Dustbin extends Component {
   }
 
   render() {
-    // console.log("dustbin...",this.props.allCards);
     const { canDrop, isOver, connectDropTarget } = this.props;
     const isActive = canDrop && isOver;
 
