@@ -3,9 +3,9 @@ import {render} from 'react-dom';
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 import Card from './card';
 
-const SortableItem = SortableElement(({value}) => <Card name={value}/>);
+var SortableItem = SortableElement(({value}) => <Card name={value} place='right' callpar={this.par.bind(this)}/>);
 
-const SortableList = SortableContainer(({items}) => {
+var SortableList = SortableContainer(({items}) => {
   return (
     <div>
       {items.map((value, index) => (<SortableItem key={`item-${index}`} index={index} value={value.name}/>))}
@@ -21,7 +21,12 @@ export default class SortableComponent extends Component {
       status: ""
     };
     this.onSortEnd = this.onSortEnd.bind(this);
+    // this.abc = this.abc.bind(this);
   }
+  par(){
+    console.log('remove');
+  }
+
 
   onSortEnd({oldIndex, newIndex}) {
     this.setState({
@@ -31,6 +36,7 @@ export default class SortableComponent extends Component {
     this.setState({items: this.props.allCards})
   };
   render() {
-    return <SortableList items={this.props.allCards} onSortEnd={this.onSortEnd}/>;
+    // return <SortableList items={this.props.allCards} onSortEnd={this.onSortEnd}/>;
+  return(  <div>{this.props.allCards.map((value,index) =>( <Card name={value.name} place='right' callpar={this.par.bind(this)}/>))}</div>)
   }
 }

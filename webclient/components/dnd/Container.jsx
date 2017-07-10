@@ -37,17 +37,17 @@ updateStatus(stat){
               scenarioId: "1",
               status: this.state.status
   };
-  $.ajax({
-        url: '/dnd/updateStatus',
-        type: 'POST',
-        data: data,
-        success: function() {
-          console.log("Status posted successfully");
-        },
-        error: function(err) {
-          console.log("Error occured", err);
-        }
-  });
+  // $.ajax({
+  //       url: '/dnd/updateStatus',
+  //       type: 'POST',
+  //       data: data,
+  //       success: function() {
+  //         console.log("Status posted successfully");
+  //       },
+  //       error: function(err) {
+  //         console.log("Error occured", err);
+  //       }
+  // });
 }
 
 changeCard(cards){
@@ -70,9 +70,9 @@ changeCard(cards){
           <Grid celled style={{height:'60%'}}>
             <Grid.Column width={4}>
               <div>
-                <Box id={1} name="Glass" addCard={this.addCard.bind(this)}/>
-                <Box id={2} name="Banana" addCard={this.addCard.bind(this)}/>
-                <Box id={3} name="Paper" addCard={this.addCard.bind(this)}/>
+                <Box id={1} name="Glass" addCard={this.addCard.bind(this)} place='left'/>
+                <Box id={2} name="Banana" addCard={this.addCard.bind(this)} place='left'/>
+                <Box id={3} name="Paper" addCard={this.addCard.bind(this)} place='left'/>
               </div>
             </Grid.Column>
             <Grid.Column width={11}>
