@@ -20,6 +20,7 @@ function setupStaticRoutes(app) {
 function setupRestRoutes(app) {
   console.log('Inside service setupRestRoutes');
   app.use('/users', require(path.join(__dirname, './users')));
+  app.use('/dnd', require(path.join(__dirname, './dnd')));
   //  MOUNT YOUR REST ROUTE HERE
   //  Eg:
 

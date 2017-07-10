@@ -20,7 +20,7 @@ module.exports = function() {
 
   app = service.setupRestRoutes(app);
 
-  // service.setupMongooseConnections();
+  service.setupMongooseConnections();
 
 
 

@@ -13,6 +13,7 @@ export default class Container extends Component {
             allCards: [],
             status:''
         };
+        this.updateStatus = this.updateStatus.bind(this);
     }
 
 addCard(id, name) {
@@ -23,10 +24,30 @@ addCard(id, name) {
   });
   var stat="";
   cardArray.map((item, index) => {
-    stat += item.id;
-  })
+    stat += '-'+item.id;
+  });
+  this.updateStatus(stat);
+}
+
+updateStatus(stat){
   this.setState({status:stat})
   console.log('status'+this.state.status);
+  let data = {
+              userId: "351928",
+              scenarioId: "1",
+              status: this.state.status
+  };
+  $.ajax({
+        url: '/dnd/updateStatus',
+        type: 'POST',
+        data: data,
+        success: function() {
+          console.log("Status posted successfully");
+        },
+        error: function(err) {
+          console.log("Error occured", err);
+        }
+  });
 }
 
 changeCard(cards){
@@ -35,10 +56,9 @@ changeCard(cards){
   });
   var stat="";
   this.state.allCards.map((item, index) => {
-    stat += item.id;
-  })
-  this.setState({status:stat})
-  console.log('status'+this.state.status);
+    stat += '-'+item.id;
+  });
+  this.updateStatus(stat);
 }
 
   render() {

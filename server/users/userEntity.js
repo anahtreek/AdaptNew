@@ -34,7 +34,7 @@ const schema = new mongoose.Schema({
     domainName: [ {
       scenarioName: {
         type: String,
-        default: []
+        default: ""
       }
       }
     ]
@@ -51,10 +51,21 @@ const schema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  status: {
-    type: Array,
-    default: []
-  }
+  statusInfo:
+  [
+    {
+      // type: Array,
+      // default: []
+          scenarioId: {
+              type: String,
+              default: ""
+          },
+          status: {
+              type: String,
+              default: ""
+          }
+    }
+  ]
 });
 let users = mongoose.model('users', schema);
 module.exports = {
